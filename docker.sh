@@ -15,7 +15,7 @@ docker pull webdevops/php-apache:latest
 docker pull mariadb
 docker run -d -p 8080:80 --name login webdevops/php-apache:latest
 docker run -d -p 8081:80 --name registro webdevops/php-apache:latest
-docker run --name mariadb -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d -p 3306:80 mariadb:latest
+docker run --name mariadb -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d -p 3306:70 mariadb:latest
 
 
 
