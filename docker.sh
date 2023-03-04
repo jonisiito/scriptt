@@ -23,8 +23,8 @@ docker exec mariadb apt update
 docker exec mariadb apt -y upgrade
 docker exec mariadb apt -y install git
 docker exec mariadb git clone https://github.com/jonisiito/dbbb /home
-docker exec mariadb mysql -u root -e "CREATE DATABASE putojoni;"
-docker exec mariadb /bin/bash -c "cd /home && mysql -u root putojoni < putojoni.sql"
+docker exec mariadb mysql -u root -e "CREATE DATABASE jonibase;"
+docker exec mariadb /bin/bash -c "cd /home && mysql -u root jonibase < jonibase.sql"
 
 
 docker exec registro apt update 
