@@ -19,13 +19,12 @@ docker run -d -p 8081:80 --name registro webdevops/php-apache:latest
 docker container run --name mariadb -e MYSQL_ROOT_PASSWORD=12345 -e MYSQL_USER=joni -e MYSQL_PASSWORD=12345 -e MYSQL_DATABASE=jonibase -p 3307:3306 -d mariadb:10 &>/dev/null
 
 
-
 docker exec mariadb apt update
 docker exec mariadb apt -y upgrade
 docker exec mariadb apt -y install git
 docker exec mariadb git clone https://github.com/jonisiito/dbbb /home
-docker exec mariadb mysql -u root -e "CREATE DATABASE jonibase;"
-docker exec mariadb /bin/bash -c "cd /home && mysql -u root jonibase < jonibase.sql"
+docker exec mariadb mysql -u root -p12345 -e "CREATE DATABASE jonibase;"
+docker exec mariadb /bin/bash -c "cd /home && mysql -u root -h 172.17.0.4 -p12345 jonibase < jonibase.sql"
 
 
 docker exec registro apt update 
