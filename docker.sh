@@ -32,6 +32,9 @@ docker exec registro apt –y upgrade
 docker exec registro apt -y install git
 docker exec registro git clone https://github.com/jonisiito/register /app
 
+clear
+
+
 
 docker exec login apt update 
 docker exec login apt –y upgrade
