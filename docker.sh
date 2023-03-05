@@ -32,11 +32,19 @@ docker exec registro apt –y upgrade
 docker exec registro apt -y install git
 docker exec registro git clone https://github.com/jonisiito/register /app
 
-clear
-
-
 
 docker exec login apt update 
 docker exec login apt –y upgrade
 docker exec login apt -y install git
 docker exec login git clone https://github.com/jonisiito/logg /app
+
+clear
+
+apt-get install python3-flask -y
+cd
+git clone https://github.com/jonisiito/monitor /home/admin/monitor
+cd /home/admin/monitor
+mkdir templates
+git clone https://github.com/jonisiito/monitortemplates /home/admin/monitor/templates
+cd ..
+python3 app.py
