@@ -41,10 +41,14 @@ docker exec login git clone https://github.com/jonisiito/logg /app
 clear
 
 apt-get install python3-flask -y
+apt install sysstat -y
+apt install python3-pip -y
 cd
 git clone https://github.com/jonisiito/monitor /home/admin/monitor
 cd /home/admin/monitor
 mkdir templates
 git clone https://github.com/jonisiito/monitortemplates /home/admin/monitor/templates
-cd ..
+cd /home/admin/monitor
 python3 app.py
+
+#------FIN------
